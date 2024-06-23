@@ -7,7 +7,7 @@ networks:
 services:
   nginx:
     image: nginx:alpine
-    container_name: build-guardian-nginx
+    container_name: app-nginx
     restart: unless-stopped
     tty: true
     ports:
@@ -25,7 +25,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: build-guardian-php
+    container_name: app-php
     restart: unless-stopped
     tty: true
     expose:
@@ -39,13 +39,13 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: build-guardian-mysql
+    container_name: app-mysql
     restart: unless-stopped
     tty: true
     ports:
       - "3307:3306"
     environment:
-      MYSQL_DATABASE: build-guardian
+      MYSQL_DATABASE: app
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
     volumes:
@@ -55,7 +55,7 @@ services:
 
   mongo:
     image: mongo:latest
-    container_name: build-guardian-mongo
+    container_name: app-mongo
     restart: unless-stopped
     tty: true
     ports:

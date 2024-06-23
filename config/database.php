@@ -37,8 +37,8 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('MONGODB_URI'),
-            'database' => 'build-guardian',
+            'dsn' => env('MONGODB_URI', 'mongodb+srv://sharvelirigoyen:1541@build-guardian.p8ykm86.mongodb.net/'),
+            'database' => 'buildguardian',
         ],
 
         'sqlite' => [
