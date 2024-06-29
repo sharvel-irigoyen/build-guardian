@@ -14,7 +14,7 @@ services:
    depends_on:
      - build-guardian
    environment:
-    DOMAINS: '143.198.25.9'  # Cambia por la IP del servidor si es necesario
+    DOMAINS: '159.203.111.15'  # Cambia por la IP del servidor si es necesario
 
   build-guardian:
     build:
